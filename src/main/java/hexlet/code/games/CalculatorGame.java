@@ -1,4 +1,4 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -24,7 +24,7 @@ public class CalculatorGame {
             System.out.println("Question: " + num1 + " " + operation + " " + num2);
             System.out.print("Your answer: ");
             int userAnswer = scanner.nextInt();
-            scanner.nextLine(); // Считываем символ новой строки
+            scanner.nextLine();
 
             if (userAnswer == correctAnswer) {
                 System.out.println("Correct!");
@@ -33,7 +33,7 @@ public class CalculatorGame {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
                         + correctAnswer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
-                correctAnswers = 0; // Сброс счетчика при неверном ответе
+                correctAnswers = 0;
             }
         }
 

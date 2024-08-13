@@ -1,9 +1,9 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class EvenGame {
+public class GCDGame {
     public static void start() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
@@ -12,22 +12,25 @@ public class EvenGame {
         System.out.print("May I have your name? ");
         String userName = scanner.nextLine();
         System.out.println("Hello, " + userName + "!");
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        System.out.println("Find the greatest common divisor of given numbers.");
 
         int correctAnswers = 0;
         while (correctAnswers < 3) {
-            int number = random.nextInt(100);
-            System.out.println("Question: " + number);
-            System.out.print("Your answer: ");
-            String answer = scanner.nextLine();
+            int num1 = random.nextInt(100) + 1;
+            int num2 = random.nextInt(100) + 1;
 
-            if (isEven(number) && answer.equalsIgnoreCase("yes")
-                    || !isEven(number) && answer.equalsIgnoreCase("no")) {
+            int correctAnswer = gcd(num1, num2);
+            System.out.println("Question: " + num1 + " " + num2);
+            System.out.print("Your answer: ");
+            int userAnswer = scanner.nextInt();
+            scanner.nextLine();
+
+            if (userAnswer == correctAnswer) {
                 System.out.println("Correct!");
                 correctAnswers++;
             } else {
-                System.out.println("'"  + answer + "' is wrong answer ;(. Correct answer was '"
-                        + (isEven(number) ? "yes" : "no") + "'.");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
+                        + correctAnswer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 correctAnswers = 0;
             }
@@ -40,7 +43,13 @@ public class EvenGame {
         scanner.close();
     }
 
-    private static boolean isEven(int number) {
-        return number % 2 == 0;
+
+    private static int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
     }
 }
