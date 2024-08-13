@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class EvenGame {
-    public static void start(){
+    public static void start() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
@@ -21,12 +21,13 @@ public class EvenGame {
             System.out.print("Your answer: ");
             String answer = scanner.nextLine();
 
-            if (isEven(number) && answer.equalsIgnoreCase("yes") ||
-                    !isEven(number) && answer.equalsIgnoreCase("no")) {
+            if (isEven(number) && answer.equalsIgnoreCase("yes")
+                    || !isEven(number) && answer.equalsIgnoreCase("no")) {
                 System.out.println("Correct!");
                 correctAnswers++;
             } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + (isEven(number) ? "yes" : "no") + "'.");
+                System.out.println("'"  + answer + "' is wrong answer ;(. Correct answer was '"
+                        + (isEven(number) ? "yes" : "no") + "'.");
                 System.out.println("Let's try again, " + userName + "!");
                 correctAnswers = 0;
             }
