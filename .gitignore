@@ -42,4 +42,4 @@ bin/
 .DS_Store
 app.iml
 /config
-/.idea
+.idea
