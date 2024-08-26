@@ -16,28 +16,32 @@ public class PrimeGame {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         int correctAnswers = 0;
+        int three = 3;
+        int hundred = 100;
         boolean keepPlaying = true;
 
-        while (keepPlaying && correctAnswers < 3) {
-            int number = random.nextInt(100) + 1; // Генерируем случайное число от 1 до 100
+        while (keepPlaying && correctAnswers < three) {
+            int number = random.nextInt(hundred) + 1; // Генерируем случайное число от 1 до 100
 
             System.out.println("Question: " + number);
             System.out.print("Your answer: ");
             String userAnswer = scanner.nextLine();
 
-            if (isPrime(number) && userAnswer.equalsIgnoreCase("yes") ||
+            if (isPrime(number) && userAnswer.equalsIgnoreCase("yes")
+                    ||
                     !isPrime(number) && userAnswer.equalsIgnoreCase("no")) {
                 correctAnswers++;
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. " +
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. "
+                        +
                         (isPrime(number) ? "The number is prime." : "The number is not prime."));
                 System.out.println("Let's try again, " + name + "!");
                 keepPlaying = false; // Завершаем игру
             }
         }
 
-        if (correctAnswers == 3) {
+        if (correctAnswers == three) {
             System.out.println("Congratulations, " + name + "!");
         }
     }

@@ -16,11 +16,13 @@ public class CalculatorGame {
         System.out.println("What is the result of the expression?");
 
         int correctAnswers = 0;
+        int three = 3;
+        int hundred = 100;
         boolean keepPlaying = true;
 
-        while (keepPlaying && correctAnswers < 3) {
-            int num1 = random.nextInt(100) + 1;
-            int num2 = random.nextInt(100) + 1;
+        while (keepPlaying && correctAnswers < three) {
+            int num1 = random.nextInt(hundred) + 1;
+            int num2 = random.nextInt(hundred) + 1;
             char operator = getOperator(random);
 
             int correctAnswer = calculate(num1, num2, operator);
@@ -33,19 +35,21 @@ public class CalculatorGame {
                 correctAnswers++;
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
+                        + correctAnswer + "'.");
                 System.out.println("Let's try again, " + name + "!");
                 keepPlaying = false;
             }
         }
 
-        if (correctAnswers == 3) {
+        if (correctAnswers == three) {
             System.out.println("Congratulations, " + name + "!");
         }
     }
 
     private static char getOperator(Random random) {
-        int operatorIndex = random.nextInt(3);
+        int three = 3;
+        int operatorIndex = random.nextInt(three);
         switch (operatorIndex) {
             case 0: return '+';
             case 1: return '-';

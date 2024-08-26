@@ -17,12 +17,17 @@ public class ProgressionGame {
 
         int correctAnswers = 0;
         boolean keepPlaying = true;
+        int errorNum = 3;
+        int one = 1;
+        int five = 5;
+        int six = 6;
+        int fifty = 50;
 
-        while (keepPlaying && correctAnswers < 3) {
-            int progressionLength = random.nextInt(6) + 5; // Длина прогрессии от 5 до 10
-            int startNumber = random.nextInt(50) + 1; // Начальное число
-            int step = random.nextInt(10) + 1; // Шаг прогрессии
-            int hiddenIndex = random.nextInt(progressionLength); // Индекс спрятанного числа
+        while (keepPlaying && correctAnswers < errorNum) {
+            int progressionLength = random.nextInt(six) + five;
+            int startNumber = random.nextInt(fifty) + one;
+            int step = random.nextInt(five) + one;
+            int hiddenIndex = random.nextInt(progressionLength);
 
             int[] progression = new int[progressionLength];
             for (int i = 0; i < progressionLength; i++) {
@@ -54,13 +59,14 @@ public class ProgressionGame {
                 correctAnswers++;
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
+                        + correctAnswer + "'.");
                 System.out.println("Let's try again, " + name + "!");
                 keepPlaying = false; // Завершаем игру
             }
         }
-
-        if (correctAnswers == 3) {
+        int three = 3;
+        if (correctAnswers == three) {
             System.out.println("Congratulations, " + name + "!");
         }
     }
