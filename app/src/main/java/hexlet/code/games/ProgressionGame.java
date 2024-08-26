@@ -15,9 +15,10 @@ public class ProgressionGame {
         System.out.println("Hello, " + name + "!");
         System.out.println("What number is missing in the progression?");
 
+        int correctAnswers = 0;
         boolean keepPlaying = true;
 
-        while (keepPlaying) {
+        while (keepPlaying && correctAnswers < 3) {
             int progressionLength = random.nextInt(6) + 5; // Длина прогрессии от 5 до 10
             int startNumber = random.nextInt(50) + 1; // Начальное число
             int step = random.nextInt(10) + 1; // Шаг прогрессии
@@ -50,12 +51,17 @@ public class ProgressionGame {
             // Проверяем ответ
             int correctAnswer = startNumber + hiddenIndex * step;
             if (userAnswer == correctAnswer) {
+                correctAnswers++;
                 System.out.println("Correct!");
             } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
                 System.out.println("Let's try again, " + name + "!");
                 keepPlaying = false; // Завершаем игру
             }
+        }
+
+        if (correctAnswers == 3) {
+            System.out.println("Congratulations, " + name + "!");
         }
     }
 }
