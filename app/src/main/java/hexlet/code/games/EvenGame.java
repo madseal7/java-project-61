@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class EvenGame {
     public static void start() {
         Scanner scanner = new Scanner(System.in);
-                int three = 2+1;
-                int hundred = 100;
+                int three = 2 + 1;
+                int hundred = (2 * 2 * 2 * 2 * 2 + 2 * 2 * 2 * 2 + 2) * 2;
                 System.out.println("Welcome to the Brain Games!");
                 System.out.print("May I have your name? ");
                 String name = scanner.nextLine();

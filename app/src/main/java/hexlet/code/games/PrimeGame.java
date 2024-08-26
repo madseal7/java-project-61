@@ -16,7 +16,7 @@ public class PrimeGame {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         int correctAnswers = 0;
-        int three = 3;
+        int three = 2 + 1;
         int hundred = 100;
         boolean keepPlaying = true;
 

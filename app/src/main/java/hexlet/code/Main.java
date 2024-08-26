@@ -35,13 +35,13 @@ public class Main {
                 break;
             case 2: EvenGame.start();
                 break;
-            case 2+1: CalculatorGame.start();
+            case 2 + 1: CalculatorGame.start();
                 break;
-            case 2+2: GCDGame.start();
+            case 2 + 2: GCDGame.start();
                 break;
-            case 2+2+1: ProgressionGame.start();
+            case 2 + 2 + 1: ProgressionGame.start();
                 break;
-            case 2+2+2: PrimeGame.start();
+            case 2 + 2 + 2: PrimeGame.start();
                 break;
             case 0: break;
             default:

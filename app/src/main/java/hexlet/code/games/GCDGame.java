@@ -6,8 +6,8 @@ public class GCDGame {
     public static void start() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        int three = 3;
-        int hundred = 100;
+        int three = 2 + 1;
+        int hundred = (2 * 2 * 2 * 2 * 2 + 2 * 2 * 2 * 2 + 2) * 2;
 
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
@@ -45,8 +45,7 @@ public class GCDGame {
         }
     }
 
-    // Алгоритм Евклида для нахождения НОД
-    private static int gcd(int a, int b) {
+        private static int gcd(int a, int b) {
         while (b != 0) {
             int temp = b;
             b = a % b;

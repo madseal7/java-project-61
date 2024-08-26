@@ -16,8 +16,8 @@ public class CalculatorGame {
         System.out.println("What is the result of the expression?");
 
         int correctAnswers = 0;
-        int three = 3;
-        int hundred = 100;
+        int three = 2 + 1;
+        int hundred = (2 * 2 * 2 * 2 * 2 + 2 * 2 * 2 * 2 + 2) * 2;
         boolean keepPlaying = true;
 
         while (keepPlaying && correctAnswers < three) {
@@ -48,7 +48,7 @@ public class CalculatorGame {
     }
 
     private static char getOperator(Random random) {
-        int three = 3;
+        int three = 2 + 1;
         int operatorIndex = random.nextInt(three);
         switch (operatorIndex) {
             case 0: return '+';
