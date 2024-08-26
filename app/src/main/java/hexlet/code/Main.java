@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
-
+        System.out.println("May I have your name?");
         System.out.print("Please enter the game number and press Enter.\n"
                 +
                 "1 - Greet\n"
