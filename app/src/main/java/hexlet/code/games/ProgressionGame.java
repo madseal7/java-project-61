@@ -65,7 +65,7 @@ public class ProgressionGame {
                 keepPlaying = false; // Завершаем игру
             }
         }
-        int three = 3;
+        int three = 2 + 1;
         if (correctAnswers == three) {
             System.out.println("Congratulations, " + name + "!");
         }

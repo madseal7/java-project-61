@@ -17,7 +17,7 @@ public class PrimeGame {
 
         int correctAnswers = 0;
         int three = 2 + 1;
-        int hundred = 100;
+        int hundred = (2 * 2 * 2 * 2 * 2 + 2 * 2 * 2 * 2 + 2) * 2;
         boolean keepPlaying = true;
 
         while (keepPlaying && correctAnswers < three) {
