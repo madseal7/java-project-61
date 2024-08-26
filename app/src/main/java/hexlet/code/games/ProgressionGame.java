@@ -10,7 +10,7 @@ public class ProgressionGame {
         Random random = new Random();
 
         System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name?");
+        System.out.print("May I have your name? ");
         String userName = scanner.nextLine();
         System.out.println("Hello, " + userName + "!");
         System.out.println("What number is missing in the progression?");

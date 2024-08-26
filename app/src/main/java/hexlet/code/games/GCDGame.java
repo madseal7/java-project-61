@@ -9,7 +9,7 @@ public class GCDGame {
         Random random = new Random();
 
         System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name?");
+        System.out.print("May I have your name? ");
         String userName = scanner.nextLine();
         System.out.println("Hello, " + userName + "!");
         System.out.println("Find the greatest common divisor of given numbers.");
