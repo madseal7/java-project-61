@@ -1,9 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.CalculatorGame;
-import hexlet.code.games.EvenGame;
-import hexlet.code.games.GCDGame;
-import hexlet.code.games.ProgressionGame;
+import hexlet.code.games.*;
 
 import java.util.Scanner;
 
@@ -22,6 +19,8 @@ public class Main {
                 "4 - GCD\n"
                 +
                 "5 - Progression\n"
+                +
+                "6 - Prime\n"
                 +
                 "0 - Exit\n"
                 +
@@ -42,6 +41,9 @@ public class Main {
                 break;
             case 5:
                 ProgressionGame.start();
+                break;
+            case 6:
+                PrimeGame.start();
                 break;
             case 0:
                 break;
