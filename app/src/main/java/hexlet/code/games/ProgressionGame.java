@@ -1,63 +1,61 @@
 package hexlet.code.games;
 
-import java.util.Random;
 import java.util.Scanner;
+import java.util.Random;
 
 public class ProgressionGame {
-
     public static void start() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
-        String userName = scanner.nextLine();
-        System.out.println("Hello, " + userName + "!");
+        String name = scanner.nextLine();
+
+        System.out.println("Hello, " + name + "!");
         System.out.println("What number is missing in the progression?");
 
-        int correctAnswers = 0;
-        while (correctAnswers < 3) {
-            int progressionLength = random.nextInt(6) + 5;
-            int startValue = random.nextInt(50) + 1;
-            int step = random.nextInt(10) + 1;
-            int hiddenIndex = random.nextInt(progressionLength);
+        boolean keepPlaying = true;
+
+        while (keepPlaying) {
+            int progressionLength = random.nextInt(6) + 5; // Длина прогрессии от 5 до 10
+            int startNumber = random.nextInt(50) + 1; // Начальное число
+            int step = random.nextInt(10) + 1; // Шаг прогрессии
+            int hiddenIndex = random.nextInt(progressionLength); // Индекс спрятанного числа
 
             int[] progression = new int[progressionLength];
             for (int i = 0; i < progressionLength; i++) {
-                progression[i] = startValue + i * step;
+                progression[i] = startNumber + i * step;
             }
 
-            int correctAnswer = progression[hiddenIndex];
+            // Заменяем спрятанное число на ".."
             progression[hiddenIndex] = -1;
 
-            StringBuilder question = new StringBuilder();
-            for (int num : progression) {
-                if (num == -1) {
+            // Вывод прогрессии
+            StringBuilder question = new StringBuilder("Question: ");
+            for (int i = 0; i < progressionLength; i++) {
+                if (progression[i] == -1) {
                     question.append(".. ");
                 } else {
-                    question.append(num).append(" ");
+                    question.append(progression[i]).append(" ");
                 }
             }
-            System.out.println("Question: " + question.toString().trim());
+            System.out.println(question.toString().trim());
+
+            // Запрашиваем ответ пользователя
             System.out.print("Your answer: ");
             int userAnswer = scanner.nextInt();
-            scanner.nextLine();
+            scanner.nextLine(); // Consume newline character
 
+            // Проверяем ответ
+            int correctAnswer = startNumber + hiddenIndex * step;
             if (userAnswer == correctAnswer) {
                 System.out.println("Correct!");
-                correctAnswers++;
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
-                        + correctAnswer + "'.");
-                System.out.println("Let's try again, " + userName + "!");
-                correctAnswers = 0;
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
+                System.out.println("Let's try again, " + name + "!");
+                keepPlaying = false; // Завершаем игру
             }
         }
-
-        if (correctAnswers == 3) {
-            System.out.println("Congratulations, " + userName + "!");
-        }
-
-        scanner.close();
     }
 }
