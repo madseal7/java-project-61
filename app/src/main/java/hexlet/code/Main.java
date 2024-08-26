@@ -1,9 +1,9 @@
 package hexlet.code;
 
-import games.CalculatorGame;
-import games.EvenGame;
-import games.GCDGame;
-import games.ProgressionGame;
+import hexlet.code.games.CalculatorGame;
+import hexlet.code.games.EvenGame;
+import hexlet.code.games.GCDGame;
+import hexlet.code.games.ProgressionGame;
 
 import java.util.Scanner;
 
