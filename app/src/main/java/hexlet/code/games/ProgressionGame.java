@@ -17,11 +17,11 @@ public class ProgressionGame {
 
         int correctAnswers = 0;
         boolean keepPlaying = true;
-        int errorNum = 3;
+        int errorNum = 2+1;
         int one = 1;
-        int five = 5;
-        int six = 6;
-        int fifty = 50;
+        int five = 2+2+1;
+        int six = 2+2+2;
+        int fifty = 2*2*2*2*2+2*2*2*2+2;
 
         while (keepPlaying && correctAnswers < errorNum) {
             int progressionLength = random.nextInt(six) + five;
