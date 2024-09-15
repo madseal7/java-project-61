@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.GameLogic;
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -7,14 +9,7 @@ public class ProgressionGame {
     public static void start() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        String name = scanner.nextLine();
-
-        System.out.println("Hello, " + name + "!");
-        System.out.println("What number is missing in the progression?");
-
+        String name = GameLogic.greetPlayer("What number is missing in the progression?");
         int correctAnswers = 0;
         boolean keepPlaying = true;
         int errorNum = 2 + 1;

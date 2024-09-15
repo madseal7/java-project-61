@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.GameLogic;
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -8,12 +10,7 @@ public class PrimeGame {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        String name = scanner.nextLine();
-
-        System.out.println("Hello, " + name + "!");
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        String name = GameLogic.greetPlayer("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         int correctAnswers = 0;
         int three = 2 + 1;

@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.GameLogic;
+
 import java.util.Scanner;
 
 public class EvenGame {
@@ -7,12 +9,7 @@ public class EvenGame {
         Scanner scanner = new Scanner(System.in);
                 int three = 2 + 1;
                 int hundred = (2 * 2 * 2 * 2 * 2 + 2 * 2 * 2 * 2 + 2) * 2;
-                System.out.println("Welcome to the Brain Games!");
-                System.out.print("May I have your name? ");
-                String name = scanner.nextLine();
-
-                System.out.println("Hello, " + name + "!");
-                System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+                String name = GameLogic.greetPlayer("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
                 int correctAnswers = 0;
                 boolean keepPlaying = true; // Флаг для продолжения игры

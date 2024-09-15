@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.GameLogic;
+
 import java.util.Random;
 import java.util.Scanner;
 public class GCDGame {
@@ -8,13 +10,7 @@ public class GCDGame {
         Random random = new Random();
         int three = 2 + 1;
         int hundred = (2 * 2 * 2 * 2 * 2 + 2 * 2 * 2 * 2 + 2) * 2;
-
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        String name = scanner.nextLine();
-
-        System.out.println("Hello, " + name + "!");
-        System.out.println("Find the greatest common divisor of given numbers.");
+        String name = GameLogic.greetPlayer("Find the greatest common divisor of given numbers.");
 
         int correctAnswers = 0;
         boolean keepPlaying = true; // Флаг для продолжения игры
